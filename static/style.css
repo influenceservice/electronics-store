@@ -131,6 +131,11 @@ form input, form textarea {
   border-radius: 15px;
 }
 
+.search_button {
+  display: flex;
+  justify-content: center;
+}
+
 .product-card h3 {
   margin: 10px 0 5px 0;
   font-size: 1.1em;

@@ -1,0 +1,11 @@
+<h2>Результаты поиска по запросу: "{{ query }}"</h2>
+
+{% if results %}
+    <ul>
+        {% for product in results %}
+            <li>{{ product.name }} — {{ product.price }} руб.</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Ничего не найдено.</p>
+{% endif %}

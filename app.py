@@ -75,6 +75,15 @@ def checkout():
         return redirect(url_for('index'))
     return render_template('checkout.html')
     
+
+@app.route('/search')
+def search():
+    query = request.args.get('q', '')
+    results = []
+    if query:
+        results = Product.query.filter(Product.name.ilike(f'%{query}%')).all()
+    return render_template('search_results.html', query=query, results=results)
+
 if __name__ == '__main__':
     with app.app_context():
         db.drop_all()
@@ -95,23 +104,23 @@ if __name__ == '__main__':
                     category_id=cat_gpu.id),
             Product(name="AMD Radeon RX 7900 XTX", price=1099.99,
                         description="Высокопроизводительная видеокарта от AMD",
-                        image_url="images/rtx4090.jpg",
+                        image_url="images/radeon.jpg",
                         category_id=cat_gpu.id),
                 Product(name="Intel Core i9-13900K", price=599.99,
                         description="24-поточный процессор 13-го поколения",
-                        image_url="https://static.nix.ru/autocatalog/cpu_intel/image/131240_m.jpg",
+                        image_url="images/intel_i9.jpg",
                         category_id=cat_cpu.id),
                 Product(name="AMD Ryzen 9 7950X", price=699.99,
                         description="Процессор с 16 ядрами на архитектуре Zen 4",
-                        image_url="https://static.nix.ru/autocatalog/cpu_amd/image/129636_m.jpg",
+                        image_url="images/amd_ryzen_9.jpg",
                         category_id=cat_cpu.id),
                 Product(name="MSI MAG B650 Tomahawk", price=229.99,
                         description="Материнская плата для AMD AM5",
-                        image_url="https://static.nix.ru/autocatalog/motherboards_msi/image/132262_m.jpg",
+                        image_url="images/msi_mag.jpg",
                         category_id=cat_motherboard.id),
                 Product(name="ASUS ROG Maximus Z790 Hero", price=599.99,
                         description="Материнская плата для Intel LGA1700",
-                        image_url="https://static.nix.ru/autocatalog/motherboards_asus/image/129235_m.jpg",
+                        image_url="images/asus_rog.jpg",
                         category_id=cat_motherboard.id),
         ]
         db.session.add_all(products)
