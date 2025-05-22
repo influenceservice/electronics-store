@@ -87,6 +87,7 @@ form input, form textarea {
 }
 .flashes li {
   color: #006600;
+  background-color: transparent;
   margin: 0;
   padding: 0;
 }
