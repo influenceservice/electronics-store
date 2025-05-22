@@ -47,7 +47,12 @@ form input, form textarea {
   background-color: rgba(255, 255, 255, 0.7); 
   border-radius: 10px;         
   padding: 10px;                    
+<<<<<<< HEAD
   margin-bottom: 20px;                
+=======
+  margin-bottom: 20px;  
+  max-width: 300px;              
+>>>>>>> 943be9e9641e47531fc9293a164a962902ef75c4
 }
 
 .category-panel ul {
@@ -60,6 +65,15 @@ form input, form textarea {
   margin-bottom: 5px;                    
 }
 
+<<<<<<< HEAD
+=======
+.go-to-bin {
+  display: flex;
+  justify-content: end;
+  
+}
+
+>>>>>>> 943be9e9641e47531fc9293a164a962902ef75c4
 /* Flashes */
 .flashes {
   background-color: #ddffdd;
@@ -87,6 +101,7 @@ form input, form textarea {
 }
 .flashes li {
   color: #006600;
+  background-color: transparent;
   margin: 0;
   padding: 0;
 }
@@ -120,6 +135,7 @@ form input, form textarea {
   max-width: 150px;
   height: auto;
   margin-bottom: 10px;
+  border-radius: 15px;
 }
 
 .product-card h3 {
