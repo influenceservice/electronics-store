@@ -100,7 +100,7 @@ if __name__ == '__main__':
         products = [
             Product(name="NVIDIA GeForce RTX 4090", price=100000,
                     description="Флагманская видеокарта с 24 ГБ памяти",
-                    image_url="images/rtx4090.jpg",
+                    image_url="images/rtx4090.png",
                     category_id=cat_gpu.id),
             Product(name="AMD Radeon RX 7900 XTX", price=1099.99,
                         description="Высокопроизводительная видеокарта от AMD",
