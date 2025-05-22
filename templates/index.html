@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<a href="{{ url_for('cart') }}" class="go-to-bin">Перейти в корзину</a>
   <div class="category-panel">
     <h2>Категории</h2>
     <ul>
@@ -13,11 +14,10 @@
 
     <h2>Товары</h2>
     <ul>
-    {% for product in products %}
 <div class="products-grid">
   {% for product in products %}
   <div class="product-card">
-    <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" width="150" />
+    <img src="{{ url_for('static', filename=product.image_url) }}" alt="{{ product.name }}" width="150" class="product-card-image"/>
     <h3>{{ product.name }}</h3>
     <p>{{ product.description }}</p>
     <p><b>{{ product.price }} ₽</b></p>
@@ -26,8 +26,6 @@
   {% endfor %}
 </div>
 
-    {% endfor %}
-    </ul>
 
-    <a href="{{ url_for('cart') }}">Перейти в корзину</a>
+    
 {% endblock %}

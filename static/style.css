@@ -47,7 +47,8 @@ form input, form textarea {
   background-color: rgba(255, 255, 255, 0.7); 
   border-radius: 10px;         
   padding: 10px;                    
-  margin-bottom: 20px;                
+  margin-bottom: 20px;  
+  max-width: 300px;              
 }
 
 .category-panel ul {
@@ -58,6 +59,12 @@ form input, form textarea {
 
 .category-panel li {
   margin-bottom: 5px;                    
+}
+
+.go-to-bin {
+  display: flex;
+  justify-content: end;
+  
 }
 
 /* Flashes */
@@ -121,6 +128,7 @@ form input, form textarea {
   max-width: 150px;
   height: auto;
   margin-bottom: 10px;
+  border-radius: 15px;
 }
 
 .product-card h3 {
