@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+  <div class="category-panel">
     <h2>Категории</h2>
     <ul>
         <li><a href="{{ url_for('index') }}" {% if not selected_cat %}style="font-weight:bold"{% endif %}>Все</a></li>
@@ -8,6 +9,7 @@
         <li><a href="{{ url_for('index', category=category.id) }}" {% if selected_cat == category.id %}style="font-weight:bold"{% endif %}>{{ category.name }}</a></li>
         {% endfor %}
     </ul>
+  </div>
 
     <h2>Товары</h2>
     <ul>

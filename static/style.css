@@ -1,7 +1,22 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     padding: 20px;
     background-color: #f4f4f4;
+}
+
+a {
+  text-decoration: none;
+  color: black; /* Черный цвет по умолчанию */
+}
+
+a:hover {
+  color: blue; /* Синий цвет при наведении */
+}
+
+a:visited {
+  color: black; /* Черный цвет для посещенных ссылок */
 }
 
 h1 {
@@ -26,6 +41,26 @@ form input, form textarea {
     padding: 8px;
     width: 300px;
 }
+
+/* Category */
+.category-panel {
+  background-color: rgba(255, 255, 255, 0.7); 
+  border-radius: 10px;         
+  padding: 10px;                    
+  margin-bottom: 20px;                
+}
+
+.category-panel ul {
+  list-style: none;               
+  padding: 0;
+  margin: 0;
+}
+
+.category-panel li {
+  margin-bottom: 5px;                    
+}
+
+/* Flashes */
 .flashes {
   background-color: #ddffdd;
   border: 1px solid #00aa00;
@@ -55,6 +90,8 @@ form input, form textarea {
   margin: 0;
   padding: 0;
 }
+
+/* Products */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
