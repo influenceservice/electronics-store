@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h2>Категории</h2>
+    <ul>
+        <li><a href="{{ url_for('index') }}" {% if not selected_cat %}style="font-weight:bold"{% endif %}>Все</a></li>
+        {% for category in categories %}
+        <li><a href="{{ url_for('index', category=category.id) }}" {% if selected_cat == category.id %}style="font-weight:bold"{% endif %}>{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
+
+    <h2>Товары</h2>
+    <ul>
+    {% for product in products %}
+<div class="products-grid">
+  {% for product in products %}
+  <div class="product-card">
+    <img src="{{ url_for('static', filename=product.image) }}" alt="{{ product.name }}" width="150" />
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p><b>{{ product.price }} ₽</b></p>
+    <a href="{{ url_for('add_to_cart', product_id=product.id) }}">В корзину</a>
+  </div>
+  {% endfor %}
+</div>
+
+    {% endfor %}
+    </ul>
+
+    <a href="{{ url_for('cart') }}">Перейти в корзину</a>
+{% endblock %}

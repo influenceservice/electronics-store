@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Магазин электроники</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes" id="flash-messages">
+      {% for message in messages %}
+        <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+
+{% block content %}{% endblock %}
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const flash = document.getElementById('flash-messages');
+    if (flash) {
+      setTimeout(() => {
+        flash.classList.add('hide');
+        // Опционально удалить элемент из DOM после анимации
+        setTimeout(() => flash.remove(), 1000);
+      }, 3000); // Через 3 секунды начнётся исчезновение
+    }
+  });
+</script>
+</body>
+</html>
